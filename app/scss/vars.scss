@@ -1,0 +1,41 @@
+$devault-color: #2B2B2B;
+// $accent-color: #CC00CC;
+$accent-color: #f718f7;
+$title-color: #234969;
+$darc-color: #191919;
+$light-color: #fff;
+
+%playfair-700{
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+}
+%playfair-500{
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+}
+%playfair-400{
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+%montserrat-700{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+%montserrat-500{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+%montserrat-400{
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+// font-family: 'DM Sans', sans-serif;
+// font-family: 'Rubik', sans-serif;s
+@function max($numbers...) {
+@return m#{a}x(#{$numbers});
+}
+@function min($numbers...) {
+@return m#{i}n(#{$numbers});
+}
