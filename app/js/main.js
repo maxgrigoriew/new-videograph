@@ -1,20 +1,15 @@
 
-$(function () {
-var mixer = mixitup('.products');
-// var mixer = mixitup('.catalog');
-});
-alert('sdf')
+const body = document.querySelector('body')
 
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
 
-    if (scroll >= 200) {
-      $("#masthead").addClass("scrolled");
+window.addEventListener( "scroll", function() {
+ var st = window.pageYOffset;
+
+    if (st > 300) {
+      
+      document.querySelector(".header").classList.add("scroll");
     } else {
-      $("#masthead").removeClass("scrolled");
+
+        document.querySelector(".header").classList.remove("scroll");
     }
 });
-  alert ('sdf')
-  alert ('sdf')
-  alert ('sdf')
-  alert ('sdf')

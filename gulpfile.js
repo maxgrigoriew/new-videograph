@@ -44,7 +44,7 @@ function scripts() {
 		])
 	.pipe(concat('main.min.js')) // Конкатенируем в один файл
 	.pipe(uglify()) // Сжимаем JavaScript
-	.pipe(dest('dist/js/')) // Выгружаем готовый файл в папку назначения
+	.pipe(dest('app/js/')) // Выгружаем готовый файл в папку назначения
 	.pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
 }
  

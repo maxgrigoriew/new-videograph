@@ -12,14 +12,29 @@
 	right: 0;
 	padding-left: 15px;
 	padding-right: 15px;
+	background: transparent;
+	transition: all 0.5s ease-in-out;
+	&.scroll {
+	background: #fff;
+	height: 50px;
+	}
+	&.scroll .header__inner{
+	transition: all 0.5s ease-in-out;
+	min-height: 50px;
+	}
+	&.scroll .menu__list-link,&.scroll .nav-panel__link,&.scroll  path{
+	color: $darc-color;
+	fill: $darc-color;
+	}
 	&__inner{
 	max-width: 1800px;
 	margin: 0 auto;
-	min-height: 60px;
+	min-height: 80px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	}
+
 	&__logo{
 		margin-right: 150px;
 		color: $light-color;
@@ -32,6 +47,7 @@
 		opacity: 0.3;
 	}
 	}
+
 	.menu__list{
 	display: flex;
 	&-item:not(:last-child){
@@ -51,39 +67,30 @@
 	}
 	
 	.nav-panel{
-		display: flex;
-		flex-direction: column;
-		&__link{
-			margin-left: auto;
-			font-size: 16px;
-			color: $light-color;
-		}
-		&__link:hover{
-			color: $accent-color;
-		}
-		&__link path{
-			fill: $light-color;
-			transition: all 0.5s ease-in-out;
-		}
-		&__link:hover path{
-			fill: $accent-color;
-		}
-		&__link:hover path{
-			color: $accent-color;
-		}
-		&__link svg{
-			margin-top: -4px;
-			margin-right: 2px;
-		}
-		
-	&__link-tel{
-		// margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	&__link{
+		margin-left: auto;
+		font-size: 14px;
+		color: $light-color;
+	}
+	&__link:hover{
+		color: $accent-color;
+		color: $accent-color;
+	}
+	&__link path, &__link span{
+		fill: $light-color;
+		transition: all 0.5s ease-in-out;
+	}
+	&__link:hover path, &__link:hover span{
+		fill: $accent-color;
+		color: $accent-color;
+	}
+	&__link svg{
+		margin-top: -4px;
+		margin-right: 1px;
 	}
 
-	&__link-map{
-	
-	}
-	
 	&__wrapper{
 		display: flex;  
 		align-items:center;
