@@ -4,8 +4,12 @@ body{
     @extend %montserrat-400;
     color: $devault-color;
 }
+.main{
+    transition: transform  400ms;
+    margin-left: 80px;
+}
 .container{
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -36,7 +40,7 @@ a:hover{
     @extend %playfair-700;
     color: $darc-color;
 }
-section{
+.page-section{
     padding: 100px 0;
 }
 
@@ -58,8 +62,8 @@ section{
 .filter-button:not(:last-child){
     margin-right: 15px;
 }
-  
-  .checkbox {
+
+.checkbox {
 	position: absolute;
 	z-index: -1;
 	opacity: 0;
@@ -88,20 +92,45 @@ section{
 }
 
 .is-btn {
-  display: inline-block;
-  padding: 20px 46px;
-  text-transform: uppercase;
-  /* border: 2px solid var(--color-success); */
-  background: transparent;
-  transition: all 0.5s ease-in-out 0s;
-  font-weight: bold;
-  letter-spacing: 2px;
-  font-size: 14px;
+display: inline-block;
+padding: 20px 46px;
+text-transform: uppercase;
+/* border: 2px solid var(--color-success); */
+background: transparent;
+transition: all 0.5s ease-in-out 0s;
+font-weight: bold;
+letter-spacing: 2px;
+font-size: 14px;
 }
 
 .is-btn:hover {
-  background-color: var(--color-primary);
-  color: $accent-color;
-  background: var(--color-success);
-  color: #fff;
+background-color: var(--color-primary);
+color: $accent-color;
+background: var(--color-success);
+color: #fff;
+}
+
+
+.is-btn--active {
+color: #fff;
+background: $accent-color;
+transition: all 0.5s ease-in-out;
+}
+
+.is-btn.is-btn--active:hover {
+color: $devault-color;
+background: #fff;
+}
+
+.is-btn--reverse {
+margin-right: 20px;
+color: $devault-color;
+background: #fff;
+transition: all 0.5s ease-in-out;
+
+}
+
+.is-btn--reverse:hover {
+color: #fff;
+background: $accent-color;
 }

@@ -36,7 +36,7 @@ function browsersync() {
  
 function scripts() {
 	return src([ // Берём файлы из источников
-		'node_modules/jquery/dist/jquery.js',
+		// 'node_modules/jquery/dist/jquery.min.js',
 		'node_modules/mixitup/dist/mixitup.js',
 		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
 		'app/js/main.js'
@@ -49,7 +49,7 @@ function scripts() {
 }
  
 function styles() {
-       return src(
+    return src(
         [
             'app/scss/style.scss'
         ]        
@@ -122,6 +122,7 @@ exports.build = build;
 
 exports.startwatch = startwatch;
  
- 
+
 // Экспортируем дефолтный таск с нужным набором функций
 exports.default = parallel(styles, scripts, browsersync, startwatch);
+
