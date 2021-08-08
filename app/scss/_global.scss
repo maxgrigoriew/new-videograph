@@ -9,7 +9,7 @@ body{
     margin-left: 80px;
 }
 .container{
-    max-width: 1440px;
+    max-width: 1640px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -44,21 +44,6 @@ a:hover{
     padding: 100px 0;
 }
 
-.filter-buttons{
-    display: flex;
-    justify-content: center;
-    
-}
-
-.filter-button{
-    background: none;
-    cursor:pointer;
-    border:none;
-    color: $devault-color;
-}
-.filter-button.mixitup-control-active{
-    color: $darc-color;
-}
 .filter-button:not(:last-child){
     margin-right: 15px;
 }
@@ -101,6 +86,8 @@ transition: all 0.5s ease-in-out 0s;
 font-weight: bold;
 letter-spacing: 2px;
 font-size: 14px;
+border: none;
+cursor: pointer;
 }
 
 .is-btn:hover {
