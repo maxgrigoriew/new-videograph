@@ -17,18 +17,16 @@ $(document).ready(function () {
     // });
 
 
-    function slidesPlugins(activeSlide = 3) {
+    function slidesPlugins(activeSlide) {
         const slides = document.querySelectorAll('.slider__item');
         const topSlider = document.querySelector('.slider__top');
         const topSliderImg = document.querySelector('.slider__top img');
-        slides[activeSlide].classList.add('active')
+        slides[activeSlide].classList.add('active');
 
         for (const slide of slides) {
             slide.addEventListener('click', () => {
                 let imgAttr = slide.getAttribute('data-img');
-                console.log('imgAttr: ', imgAttr);
                 topSliderImg.src = `images/content/top-slider/${imgAttr}`;
-            
                 clearActiveClasses();
             
                 slide.classList.add('active');
@@ -47,7 +45,7 @@ $(document).ready(function () {
             });
         }
     }
-    slidesPlugins(1);
+    slidesPlugins(0);
 
     // mixitup
 
