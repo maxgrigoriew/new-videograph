@@ -10,8 +10,10 @@ body{
 }
 .container{
     max-width: 1640px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 80px;
+    position: relative;
 }
 .container-fluid{
     max-width: 1800px;
@@ -35,13 +37,15 @@ a:hover{
     flex: 1 0 auto;
 }
 .title{
+    text-align:center;
     font-size: 42px;
-    margin-bottom: 80px;
+    line-height: 1.5;
+    margin-bottom: 60px;
     @extend %playfair-700;
     color: $darc-color;
 }
 .page-section{
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .filter-button:not(:last-child){
@@ -54,31 +58,31 @@ a:hover{
 	opacity: 0;
     appearance: none;
 }
-.cuscom-checkbox {
-	position: relative;
-    padding-left: 24px;
-}
-.cuscom-checkbox:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 16px;
-	height: 16px;
-    background: #ebebeb;
-    border:none;
-    border-radius: 3px;
-}
+// .cuscom-checkbox {
+// 	position: relative;
+//     padding-left: 24px;
+// }
+// .cuscom-checkbox:before {
+// 	content: '';
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 16px;
+// 	height: 16px;
+//     background: #ebebeb;
+//     border:none;
+//     border-radius: 3px;
+// }
 
-.checkbox:checked + .cuscom-checkbox:before {
-	background-image: url('../images/icons/check.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
+// .checkbox:checked + .cuscom-checkbox:before {
+// 	background-image: url('../images/icons/check.png');
+//     background-repeat: no-repeat;
+//     background-position: center;
+// }
 
 .is-btn {
 display: inline-block;
-padding: 20px 46px;
+padding: 20px 40px;
 text-transform: uppercase;
 /* border: 2px solid var(--color-success); */
 background: transparent;
@@ -110,7 +114,7 @@ background: #fff;
 }
 
 .is-btn--reverse {
-margin-right: 20px;
+margin-right: 33px;
 color: $devault-color;
 background: #fff;
 transition: all 0.5s ease-in-out;
