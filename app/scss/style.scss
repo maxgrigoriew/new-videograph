@@ -814,7 +814,7 @@ fill: #fff;
 		display: flex;
 		flex-direction: column;
 		align-items:center;
-		// background: rgba(0, 0, 0, 0.7);
+		height: 350px;
 		border-radius: 10px;	
 		z-index: 10;
 		max-width: 300px;
@@ -830,7 +830,8 @@ fill: #fff;
 		}
 		&:hover .advantages__item-text{
 			opacity: 1;
-			transition: all 0.5s ease-in-out 0.3s;
+			transform:translateY(0);
+			transition: opacity 0.5s ease-in-out 0.5s;
 		}
 		&:hover::after{
 			width: 250%;
@@ -838,9 +839,12 @@ fill: #fff;
 		}
 		&:hover::before{
 			background: rgba(0, 0, 0, 0.8);
-			top: 90px;
+			top: 0;
 		}
 		&:hover .advantages__item-title{
+			transform:translateY(0);
+		}
+		&:hover .advantages__item-img{
 			transform:translateY(0);
 		}
 	}
@@ -868,13 +872,14 @@ fill: #fff;
 		transition: all 0.5s ease-in-out;
 	}
 	&__item-img{
-		// opacity: 0;
+		transform: translateY(170px);
 		border-radius: 50%;
 		border: 2px solid #fff;
 		width: 80px;
 		height: 80px;
 		padding: 10px;
 		margin-bottom: 20px;
+		transition: all 0.5s ease-in-out;
 		svg{
 			// display: none;
 			height: 100%;
@@ -885,16 +890,16 @@ fill: #fff;
 		}
 	}
 	&__item-title{
-		margin-bottom: 20px;
+		margin-bottom: 50px;
 		font-size: 18px;
 		font-weight: 500;
 		color: #fff;
-		transform:translateY(90px);
+		transform:translateY(155px);
 		transition: all 0.5s ease-in-out;
 	}
 	&__item-text{
 		opacity: 0;
-		// transition: all 0.5s ease-in-out 0.3s;
+		transform: translateY(90px);
 		font-size: 14px;
 		color: #fff;
 		font-weight: 500;
