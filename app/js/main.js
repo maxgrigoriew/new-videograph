@@ -51,4 +51,17 @@ $(document).ready(function () {
 
     var mixer = mixitup('.portfolio__items');
     
+    //accordeon
+    
+    const accordeons = document.querySelectorAll('.steps__item');
+    for (let item = 0; item < accordeons.length; item++) {
+        
+        accordeons[item].addEventListener('click', () => {
+            for (let x = 0; x < accordeons.length; x++){
+                accordeons[x].classList.remove('active')
+            };
+            
+            accordeons[item].classList.toggle('active');
+        });
+    };
 });

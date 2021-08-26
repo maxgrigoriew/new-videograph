@@ -474,7 +474,8 @@ opacity: 1;
 		display: flex;
 		justify-content: space-between;
 	}
-	&__images{
+	&__img{
+		width: 100%;
 		position: relative;
 		& img{
 			object-fit: cover;
@@ -482,23 +483,8 @@ opacity: 1;
 			width: 100%;
 		}
 	}
-	&__img:first-child{
-		height: 500px;
-		position: relative;		
-	}
-	&__img:last-child{
-		position: absolute;
-		bottom: 0px;
-		left: -250px;
-		height: 400px;
-		z-index: -1;
-		width: 300px;
-	}
 	&__content{
-		max-width: 550px;
-		width: 100%;
-		margin-right: 350px;
-		min-height: 700px;
+
 	}
 	&__content-img{
 		margin-bottom: 40px;
@@ -556,15 +542,10 @@ opacity: 1;
 	text-align: center;
 }
 &__items-wrapper{
-	display: flex;
-	justify-content: space-between;
 }
 &__buttons{
 	display: flex;
-	flex-direction: column;
-	min-width: 260px;
-	max-width: 260px;
-	margin-right: 30px;
+	margin-bottom: 60px;
 }
 &__buttons-title{
 	font-size: 32px;
@@ -577,8 +558,7 @@ opacity: 1;
 	margin-right: 0;
 }
 &__button:not(:last-child){
-	margin-bottom: 15px;
-	margin-right: 0;
+	margin-right: 15px;
 }
 
 &__items{
@@ -742,6 +722,9 @@ fill: #fff;
 	// background-image: url('../images/fon-22.jpg');
 	background-repeat: no-repeat;
 	background-size:cover;
+	&__content{
+		justify-content: flex-start;
+	}
 	&__title{
 		// color: #fff;
 	}
@@ -750,27 +733,33 @@ fill: #fff;
 		justify-content: space-between;
 	}
 	&__img{
-		min-width: 400px;
-		margin-right: 30px;
+		min-width: 50%;
+		min-height: 700px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
-		// & img{
-		// 	object-fit: cover;
-		// 	height: 100%;
-		// }
 	}
 	&__items{
-		display: flex;
-		flex-wrap: wrap;
 		counter-reset: my-counter;
 	}
 	&__item{
-		width: 50%;
-		// padding: 0 15px;
-		// text-align: center;
-		// border-radius: 10px;
-		// background: rgba(0, 0, 0, 0.5);
+		overflow: hidden;
+		background: $light-color;
+		text-align: center;
+		transition: all 0.5s ease-in-out;
+		padding:15px 60px;
+		border-radius: 10px;
+		position: relative;
+		cursor: pointer;
+	}
+	
+	&__item:hover{
+		background: rgb(136, 134, 134);
+	}
+	&__item.active .steps__item-text{
+		max-height: 200px;
+		opacity: 1;
+		
 	}
 	&__item:not(:last-child){
 		margin-bottom: 25px;
@@ -782,16 +771,28 @@ fill: #fff;
 		text-transform: uppercase;
 		counter-increment: my-counter;
 		content: "Шаг " counter(my-counter) ".";
+		color: $accent-color;
 	} 
 	&__item-title{
 		display: inline-block;
 		font-size: 18px;
-		margin-bottom: 10px;
 		text-transform: uppercase;
 		font-weight: 500;
+		color: $accent-color;
+		// min-height: 50px;
+		// line-height: 50px;
 	}
 	&__item-text{
 		font-size: 14px;
+		max-height: 0;
+		color: $darc-color;
+		transition: all 0.5s ease-in-out;
+		opacity: 0;
+		
+		
+	}
+	&__item-text:hover{
+		
 	}
 	
 }
