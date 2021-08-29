@@ -20,9 +20,8 @@ const autoprefixer = require('gulp-autoprefixer');
 // Подключаем minimg
 const imagemin = require('gulp-imagemin');
 
+const plumber = require('gulp-plumber');
 
- 
- 
 // Определяем логику работы Browsersync
 function browsersync() {
 	browserSync.init({ // Инициализация Browsersync
@@ -36,24 +35,26 @@ function browsersync() {
  
 function scripts() {
 	return src([ // Берём файлы из источников
-		// 'node_modules/jquery/dist/jquery.min.js',
+		'node_modules/swiper/swiper-bundle.js',
 		'node_modules/mixitup/dist/mixitup.js',
 		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
 		'app/js/main.js'
 		// Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
-		])
+	])
+	.pipe(plumber())
 	.pipe(concat('main.min.js')) // Конкатенируем в один файл
 	.pipe(uglify()) // Сжимаем JavaScript
 	.pipe(dest('app/js/')) // Выгружаем готовый файл в папку назначения
 	.pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
 }
- 
+
 function styles() {
     return src(
         [
             'app/scss/style.scss'
         ]        
-        )
+	)
+	.pipe(plumber())
 	.pipe(concat('style.min.css')) // Конкатенируем в файл app.min.js
 	// .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
     .pipe(scss({ outputStyle: 'compressed' }))
@@ -61,30 +62,6 @@ function styles() {
 	.pipe(browserSync.stream()) // Сделаем инъекцию в браузер
 }
 
-// function images() {
-// 	return src('app/images/**/*.*')
-// 		.pipe(imagemin())
-// 	.pipe(dest('dist/images'))
-// }
-
-
- 
-function images() {
-	return src('app/images/**/*.*')
-		.pipe(imagemin([
-			    imagemin.gifsicle({interlaced: true}),
-				imagemin.mozjpeg({quality: 75, progressive: true}),
-				imagemin.optipng({optimizationLevel: 5}),
-				imagemin.svgo({
-        plugins: [
-            {removeViewBox: true},
-            {cleanupIDs: false}
-        ]
-    })
-		]))
-		.pipe(dest('dist/images'))
-}
- 
 function startwatch() {
  
 	// Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
@@ -114,9 +91,6 @@ exports.scripts = scripts;
  
 // Экспортируем функцию styles() в таск styles
 exports.styles = styles;
-
-// Экспортируем картинки 
-exports.images = images;
 
 exports.build = build;
 

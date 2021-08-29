@@ -797,7 +797,63 @@ fill: #fff;
 	
 }
 
+// reviews
+.reviews{
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+		
+	}
+	&__img{
+		background-image: url('../images/about-bg.jpg');
+		background-repeat:no-repeat;
+		background-position:center;
+		background-size: cover;
+		min-height: 400px;
+		width: 100%;
+	}
+	&__content{
+		width: 50%;
+	}
+	
+}
 
+.reviews-slider{
+	height: 100%;
+	&__item{
+		text-align: center;
+		padding: 50px;
+		background: #2b2b2b;
+		padding: 50px 80px;
+		color: $light-color;
+		
+	}
+	&__img{
+		width: 100px;
+		height: 100px;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius:50%;
+		overflow: hidden;
+		margin-bottom: 30px;
+		& img{
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+	&__info{
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+	&__info-name{
+		font-weight: 600;
+		margin-right: 30px;
+	}
+	&__text{
+		font-style: italic;
+	}
+}
 // advantages
 
 .advantages{
@@ -997,9 +1053,9 @@ fill: #fff;
 	justify-content: space-between;
     align-items: stretch;
 }
-.contacts__info{
-	width: 50%;
-	margin-right: 30px;
+.contacts__info, .contacts__form{
+	padding: $width-container;
+	width: 100%;
 }
 
 .contacts__title {
@@ -1024,7 +1080,7 @@ fill: #fff;
 }
 
 .contacts__info-item__contact{
-    color:#fff;
+    color:$darc-color;
     transition: color 0.5s ease-in-out;
 }
 .contacts__info-item__contact:hover{
@@ -1039,16 +1095,17 @@ fill: #fff;
     background: var(--color-success);
 }
 
-.contact__info-map {
-    height: 300px;
+.contacts__form {
+	background: $darc-color;
 }
 
 .contacts-form{
-	width: 100%;
 	display: block;	
+	color: $light-color;
+	
 }
 .contacts__form-title{
-    color:#fff;
+    color: $light-color;
     margin-bottom: 59px;
 }
 
@@ -1059,19 +1116,19 @@ contacts-form__textarea {
     display: block;
     border: none;
     border-bottom: 2px solid;
-    border-color: #fff;
+    border-color: $darc-color;
     padding: 15px;
-    background: transparent;
+    background: $light-color;
     transition: all 0.5s ease;
     resize: none;
 }
 .contacts-form__input,
 contacts-form__textarea::placeholder{
-    color: #000;
+    color: $darc-color;
 }
 .contacts-form__input:hover,
 .contacts-form__textarea:hover{
-	border-color: var(--color-success);
+	border-color: $darc-color;
 }
 
 .contacts-form__input:not(:last-child) {}

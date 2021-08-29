@@ -64,4 +64,8 @@ $(document).ready(function () {
             accordeons[item].classList.toggle('active');
         });
     };
+    
+    var mySwiper = new Swiper('.swiper', {
+    
+});
 });
