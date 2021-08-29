@@ -333,9 +333,9 @@ opacity: 1;
 
 .slider{
 	&__top {
-		padding-left: 450px;
-		background: rgb(29, 28, 28);
-	height: 80vh;
+	padding-left: 450px;
+	background: rgb(29, 28, 28);
+	height: 85vh;
 	transition: 0.5s ease-in-out;
 	background-position: top;
 	background-size: cover;
@@ -361,19 +361,18 @@ opacity: 1;
 	}
 
 	&__bottom {
-	margin-top: auto;
 	width: 100%;
 	display: flex;
-	padding: 20px 10px;
+	// padding: 20px 10px;
 	background: #2b2b2b;
 	position: relative;
-	height: 20vh;
+	height: 15vh;
 	position: relative;
 	}
 
 	&__item {
-	border-radius: 8px;
-	margin: 10px;
+	// border-radius: 8px;
+	// margin: 10px;
 	color: #fff;
 	flex: 1;
 	background-size: cover;
@@ -404,7 +403,6 @@ opacity: 1;
 		width: 100%;
 		height: 100%;
 		background-color: #ffffff12;
-		
 		transition: all 0.5s ease-in-out;
 	}
 	&:hover::before{
@@ -412,10 +410,10 @@ opacity: 1;
 		transition: all 0.5s ease-in-out;
 	}
 	&:hover{
-		transform: scale(1.05);
+		// transform: scale(1.05);
 	}
 	&.active:hover{
-		transform: scale(1);
+		// transform: scale(1);
 	}
 	}
 
@@ -744,22 +742,35 @@ fill: #fff;
 	}
 	&__item{
 		overflow: hidden;
-		background: $light-color;
+		// background: #000;
 		text-align: center;
 		transition: all 0.5s ease-in-out;
 		padding:15px 60px;
 		border-radius: 10px;
+		border: 1px solid $light-color;
 		position: relative;
 		cursor: pointer;
 	}
 	
 	&__item:hover{
-		background: rgb(136, 134, 134);
+		// background: rgb(136, 134, 134);
+	}
+	&__item.active{
+		background: $light-color;
+		color: $darc-color;
+	}
+	&__item.active::before{
+		color: $darc-color;
+		transition: all 0.5s ease-in-out;
+	}
+	&__item.active .steps__item-title{
+		color: $darc-color;
+		transition: all 0.5s ease-in-out;
 	}
 	&__item.active .steps__item-text{
 		max-height: 200px;
 		opacity: 1;
-		
+		color: $darc-color;
 	}
 	&__item:not(:last-child){
 		margin-bottom: 25px;
@@ -771,21 +782,21 @@ fill: #fff;
 		text-transform: uppercase;
 		counter-increment: my-counter;
 		content: "Шаг " counter(my-counter) ".";
-		color: $accent-color;
+		color: $light-color;
 	} 
 	&__item-title{
 		display: inline-block;
 		font-size: 18px;
 		text-transform: uppercase;
 		font-weight: 500;
-		color: $accent-color;
+		color: $light-color;
 		// min-height: 50px;
 		// line-height: 50px;
 	}
 	&__item-text{
 		font-size: 14px;
 		max-height: 0;
-		color: $darc-color;
+		color: $light-color;
 		transition: all 0.5s ease-in-out;
 		opacity: 0;
 		
@@ -1045,21 +1056,22 @@ fill: #fff;
 
 .contacts{
     // background-image: url('../img/about-bg.jpg');
-	background: #ececec;
-    color: #867a7a;
+    color: $darc-color;
 }
 .contacts__wrapper {
 	display: flex;
 	justify-content: space-between;
     align-items: stretch;
 }
+.contacts__info{
+	background-image: url('../images/about-bg.jpg');
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 .contacts__info, .contacts__form{
 	padding: $width-container;
 	width: 100%;
-}
-
-.contacts__title {
-    margin-bottom: 100px;
 }
 
 .contacts__info-icon {
@@ -1075,24 +1087,34 @@ fill: #fff;
 }
 
 .contacts__info-icon path {
-    fill: var(--color-success);
+    // fill: $darc-color;
     transition: all 0.5s ease-in-out;
 }
 
 .contacts__info-item__contact{
-    color:$darc-color;
+    color:$light-color;
     transition: color 0.5s ease-in-out;
 }
 .contacts__info-item__contact:hover{
-    color:var(--color-success);
+    color: $accent-color;
+}
+
+.contacts__info-item:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.contacts__info-item__title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: $light-color;
 }
 
 .contacts__info-item__contact:hover .contacts__info-icon path {
-    fill: white;
+    // fill: $accent-color;
 }
 
 .contacts__info-item__contact:hover .contacts__info-icon {
-    background: var(--color-success);
+    // background: $darc-color;
 }
 
 .contacts__form {
@@ -1106,46 +1128,48 @@ fill: #fff;
 }
 .contacts__form-title{
     color: $light-color;
-    margin-bottom: 59px;
+    margin-bottom: 30px;
 }
-
+.contacts-form__input{
+	// margin-bottom: 15px;
+}
 .contacts-form__input,
-contacts-form__textarea {
+.contacts-form__textarea {
     width: 100%;
     height: 50px;
     display: block;
     border: none;
-    border-bottom: 2px solid;
-    border-color: $darc-color;
+    border-bottom: 2px solid $light-color;
     padding: 15px;
-    background: $light-color;
+	color: $light-color;
+    background: transparent;
     transition: all 0.5s ease;
     resize: none;
+	outline: none;
+}
+.contacts-form__input:focus,
+.contacts-form__textarea:focus{
+	box-shadow: 0 0 0 3px $accent-color;
+	border-bottom: 2px solid transparent;
+}
+.contacts-form__input:focus:hover,
+.contacts-form__textarea:focus:hover{
+	border-bottom: 2px solid transparent;
 }
 .contacts-form__input,
-contacts-form__textarea::placeholder{
-    color: $darc-color;
+.contacts-form__textarea::placeholder{
+    color: $light-color;
 }
 .contacts-form__input:hover,
 .contacts-form__textarea:hover{
-	border-color: $darc-color;
+	border-color: $accent-color;
 }
 
 .contacts-form__input:not(:last-child) {}
 
 .contacts-form__textarea {
     min-height: 100px;
-    margin-bottom: 50px;
-}
-
-.contacts__info-item:not(:last-child) {
     margin-bottom: 30px;
-}
-
-.contacts__info-item__title {
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #867a7a;
 }
 
 .is-btn.contacts-form__btn{
